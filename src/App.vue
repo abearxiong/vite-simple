@@ -1,9 +1,22 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
+import HelloTsx from './components/hello/HelloTsx';
+import HelloEmit from './components/hello/HelloEmit';
+const onClick = (e: any) => {
+  console.log('onClick', e);
+};
+const onChange = (id: any) => {
+  console.log('number', id);
+};
 </script>
 
 <template>
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div>
+    <div>
+      <HelloTsx b="hello tsx" @click="onClick" />
+      <br />
+      <HelloEmit b="hello emit" @change="onChange" />
+    </div>
+  </div>
 </template>
 
 <style>
